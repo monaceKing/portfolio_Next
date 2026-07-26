@@ -7,6 +7,10 @@ export const metadata = {
   description: "Responsable projet informatique, développeur web et mobile",
 };
 
+export const viewport = {
+  themeColor: '#000000',
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
