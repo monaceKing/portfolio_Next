@@ -1,6 +1,6 @@
 import "./globals.css";
-import Navigation from './components/Navigation/Navigation.js'
-import Footer from './components/Footer/Footer.js'
+import Navigation from "./components/Navigation/Navigation.js";
+import Footer from "./components/Footer/Footer.js";
 
 export const metadata = {
   title: "portfolio de Juste Amour",
@@ -8,13 +8,14 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#000000',
+  themeColor: "#000000",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
-      <body>
+    // ✅ Ajout de suppressHydrationWarning sur html et body
+    <html lang="fr" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Navigation />
         <main>{children}</main>
         <Footer />
