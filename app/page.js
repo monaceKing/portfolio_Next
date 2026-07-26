@@ -6,7 +6,7 @@ export default function Home() {
         <h1 className={styles.heroTitle}>
           Bonjour, je suis{" "}
           <span className={styles.highlight}>
-            Juste Amour MAVOUNGOU-MBATCHI
+            Juste Monace MAVOUNGOU-MBATCHI
           </span>
         </h1>
         <p className={styles.heroSubtitle}>Responsable projet informatique</p>

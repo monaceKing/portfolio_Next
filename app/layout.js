@@ -1,6 +1,6 @@
 import "./globals.css";
-import Navigation from '../components/Navigation/Navigation.js'
-import Footer from '../components/Footer/Footer.js'
+import Navigation from './components/Navigation/Navigation.js'
+import Footer from './components/Footer/Footer.js'
 
 export const metadata = {
   title: "portfolio de Juste Amour",

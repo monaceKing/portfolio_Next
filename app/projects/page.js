@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import Tag from '@/components/Tag/Tag'
+import Tag from '../components/Tag/Tag'
 import Link from 'next/link'
 
 export default function Projets() {
