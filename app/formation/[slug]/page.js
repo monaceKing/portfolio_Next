@@ -1,33 +1,10 @@
 import styles from "./page.module.css";
-
-// Liste des formations (normalement, ça viendrait d'une API ou d'une base de données)
-const formations = {
-  "integrateur-web": {
-    title: "Intégrateur Web",
-    description:
-      "Formation en Intégration Web. Apprenez à créer des sites web responsive et accessibles.",
-    details: ["Bac +2", "9 mois"],
-    image: "/images/integrateur.jpg",
-  },
-  "testeur-logiciel": {
-    title: "Testeur Logiciel",
-    description:
-      "Formation en Test Logiciel. Assurez la qualité des applications avant leur mise en production.",
-    details: ["Bac +2", "9 mois"],
-    image: "/images/testeur.jpg",
-  },
-  "developpeur-low-code": {
-    title: "Développeur Low-Code",
-    description:
-      "Formation en Développement Low-Code. Créez des applications rapidement sans coder (ou presque).",
-    details: ["Bac +2", "6 mois"],
-    image: "/images/lowcode.jpg",
-  },
-};
+import formationsData from "../../data/formations.json";
+import Image from "next/image";
 
 export default async function FormationDetail({ params }) {
   const { slug } = await params;
-  const formation = formations[slug];
+  const formation = formationsData.find((formation) => formation.slug === slug);
 
   // Si la formation n'existe pas, afficher un message
   if (!formation) {
@@ -48,15 +25,22 @@ export default async function FormationDetail({ params }) {
 
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
-          <div className={styles.imagePlaceholder}>Image de la formation</div>
+          <Image
+            className={styles.image}
+            src={formation.image}
+            alt={formation.title}
+            width={800}
+            height={600}
+            preload
+          />
         </div>
 
         <div className={styles.details}>
           <h2>Détails</h2>
           <div className={styles.technologies}>
-            {formation.details.map((detail, index) => (
+            {formation.tags.map((tag, index) => (
               <span key={index} className={styles.tech}>
-                {detail}
+                {tag}
               </span>
             ))}
           </div>
@@ -64,4 +48,10 @@ export default async function FormationDetail({ params }) {
       </div>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return formationsData.map((formation) => ({
+    slug: formation.slug,
+  }));
 }

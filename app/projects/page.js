@@ -1,9 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import styles from "./page.module.css";
 import projectsData from "../data/projects.json";
 import Tag from "../components/Tag/Tag";
+
+export const metadata = {
+  title: "Mes Projets | Portfolio",
+  description:
+    "Découvrez mes projets de développement web : applications React, sites Next.js et plus encore.",
+};
 
 export default function Projects() {
   return (
@@ -21,13 +26,13 @@ export default function Projects() {
             className={styles.card}
           >
             <div className={styles.imageWrapper}>
-              {project.image && (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={styles.image}
-                />
-              )}
+              <Image
+                src={project.image || "/placeholder.png"}
+                alt={project.title}
+                width={800}
+                height={500}
+                className={styles.image}
+              />
             </div>
             <div className={styles.content}>
               <h2>{project.title}</h2>

@@ -1,7 +1,30 @@
-/* eslint-disable @next/next/no-img-element */
 import styles from "./page.module.css";
+import Image from "next/image";
 import projectsData from "../../data/projects.json";
 import { notFound } from "next/navigation";
+
+// les Core Web Vitals sont utilisées par Google pour le classement des pages dans les résultats de recherche.
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Projet non trouvé",
+    };
+  }
+
+  return {
+    title: `${project.title} | Portfolio`,
+    description: project.longDescription,
+    openGraph: {
+      title: project.title,
+      description: project.shortDescription,
+      images: [project.image],
+    },
+  };
+}
 
 export default async function ProjectDetail({ params }) {
   const { slug } = await params;
@@ -22,13 +45,14 @@ export default async function ProjectDetail({ params }) {
 
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
-          {project.image && project.image.trim() !== "" && (
-            <img
-              className={styles.image}
-              src={project.image}
-              alt={project.title || "Image du projet"}
-            />
-          )}
+          <Image
+            src={project.image || "/placeholder.png"}
+            alt={project.title}
+            width={800}
+            height={500}
+            className={styles.image}
+            preload={true}
+          />
         </div>
 
         <div className={styles.details}>
