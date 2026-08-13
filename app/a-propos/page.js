@@ -1,21 +1,20 @@
-import styles from './page.module.css'
+import styles from "./page.module.css";
 
 export default function About() {
   return (
     <div className="container">
-      <h1 className="title">À propos de moi</h1>
-      
       <div className={styles.content}>
         <div className={styles.bio}>
           <h2>Qui suis-je ?</h2>
           <p>
-            Développeur web passionné avec 3 ans d&apos;expérience dans la création
-            d&apos;applications modernes et performantes. Spécialisé dans l&apos;écosystème
-            React et Next.js.
-          </p>
-          <p>
-            J&apos;aime transformer des idées en produits concrets qui résolvent
-            de vrais problèmes utilisateurs.
+            Ingénieur logiciel de formation et responsable de projets
+            informatiques, j&apos;interviens sur le développement,
+            l&apos;intégration de solutions et l&apos;analyse des données.
+            <br />
+            Mon parcours m&apos;a permis de développer une approche polyvalente,
+            à la croisée de la technique, de la gestion de projets et de la
+            data, avec pour objectif de transformer les besoins en solutions
+            concrètes et utiles.
           </p>
         </div>
 
@@ -25,35 +24,38 @@ export default function About() {
             <div className={styles.skillCategory}>
               <h3>Frontend</h3>
               <ul>
+                <li>Angular</li>
                 <li>React & Next.js</li>
-                <li>JavaScript ES6+</li>
-                <li>HTML5 & CSS3</li>
+                <li>Tailwind CSS</li>
+                <li>JavaScript</li>
                 <li>Responsive Design</li>
               </ul>
             </div>
-            
+
             <div className={styles.skillCategory}>
               <h3>Backend</h3>
               <ul>
-                <li>Node.js & Express</li>
-                <li>API REST</li>
-                <li>MongoDB</li>
-                <li>PostgreSQL</li>
+                <li>C# / .NET</li>
+                <li>PHP / Laravel</li>
+                <li>Python / FastAPI</li>
+                <li>Java / Spring</li>
+                <li>SQL / Bases de données</li>
               </ul>
             </div>
 
             <div className={styles.skillCategory}>
               <h3>Outils</h3>
               <ul>
-                <li>Git & GitHub</li>
-                <li>VS Code</li>
-                <li>Figma</li>
+                <li>Power BI</li>
+                <li>Odoo</li>
+                <li>Git / GitHub</li>
                 <li>Postman</li>
+                <li>Docker</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -2,8 +2,7 @@
 import Link from "next/link";
 import styles from "./Navigation.module.css";
 import { usePathname } from "next/navigation";
-import { useState } from 'react'
-
+import { useState } from "react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,10 +26,6 @@ export default function Navigation() {
   return (
     <nav className={styles.nav}>
       <div className="container">
-        <Link href="/" className={styles.logo}>
-          Mon Portfolio
-        </Link>
-
         {/* Bouton burger pour mobile */}
         <button
           className={styles.burger}
@@ -47,9 +42,11 @@ export default function Navigation() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`${styles.link} ${
-                  pathname === link.href ? styles.active : ""
-                }`}
+                className={
+                  link.href === "/contact"
+                    ? styles.ctaButton
+                    : `${styles.link} ${pathname === link.href ? styles.active : ""}`
+                }
               >
                 {link.label}
               </Link>

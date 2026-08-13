@@ -13,10 +13,13 @@ export const metadata = {
 export default function Projects() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Mes Projets</h1>
-      <p className={styles.description}>
-        Découvrez les projets sur lesquels j&apos;ai travaillé
-      </p>
+      <div className={styles.header}>
+        <p>
+          Découvrez mes projets de développement web, allant des applications
+          React aux sites Next.js. Chaque projet est accompagné d&apos;une
+          description détaillée et des technologies utilisées.
+        </p>
+      </div>
 
       <div className={styles.grid}>
         {projectsData.map((project) => (
