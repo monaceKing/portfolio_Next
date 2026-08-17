@@ -1,47 +1,245 @@
-
-.contactWrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+.contact {
+  min-height: 100%;
+  padding: 2rem 2rem 3rem;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(50, 88, 255, 0.1), transparent 35%),
+    #f8f9fc;
 }
 
+.header {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.eyebrow,
+.infoEyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+
+  color: #5368d8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.title {
+  margin: 0 0 1rem;
+
+  color: #0b1d71;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.description {
+  max-width: 650px;
+  margin: 0;
+
+  color: #667085;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contactWrapper {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(400px, 1.4fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* =========================
+   INFORMATIONS
+   ========================= */
+
 .contactInfo {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 12px;
-    height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 500px;
+  padding: 2.5rem;
+
+  overflow: hidden;
+  border-radius: 24px;
+
+  color: white;
+  background: linear-gradient(145deg, #0b1d71 0%, #263ca5 55%, #764ba2 100%);
+
+  box-shadow: 0 20px 50px rgba(11, 29, 113, 0.18);
 }
 
 .contactInfo h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #667eea;
+  max-width: 300px;
+  margin: 0 0 1rem;
+
+  color: white;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.infoDescription {
+  max-width: 400px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.infoEyebrow {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
 }
 
 .infoItem {
-    margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
 }
 
-.infoItem strong {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: #333;
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.2rem;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .infoItem a {
-    color: #667eea;
-    text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  transition: color 0.25s ease;
 }
 
 .infoItem a:hover {
-    text-decoration: underline;
+  color: white;
 }
 
+/* Décoration en arrière-plan */
 
+.decoration {
+  position: absolute;
+  right: -80px;
+  bottom: -100px;
 
+  width: 260px;
+  height: 260px;
 
-@media (max-width: 768px) {
-    .contactWrapper {
-        grid-template-columns: 1fr;
-    }
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 40px rgba(255, 255, 255, 0.025),
+    0 0 0 80px rgba(255, 255, 255, 0.02);
+
+  pointer-events: none;
+}
+
+/* =========================
+   FORMULAIRE
+   ========================= */
+
+.formWrapper {
+  padding: 2.5rem;
+  border: 1px solid rgba(11, 29, 113, 0.08);
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+.formHeader {
+  margin-bottom: 2rem;
+}
+
+.formHeader h2 {
+  margin: 0 0 0.5rem;
+
+  color: #172554;
+  font-size: 1.5rem;
+}
+
+.formHeader p {
+  margin: 0;
+
+  color: #667085;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .contactWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contactInfo {
+    min-height: auto;
+  }
+
+  .infoList {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 3.5rem 1rem 4rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .contactInfo,
+  .formWrapper {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .contactInfo h2 {
+    font-size: 1.7rem;
+  }
 }

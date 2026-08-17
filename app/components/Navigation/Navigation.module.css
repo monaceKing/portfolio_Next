@@ -19,7 +19,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #667eea;
+  color: #0b1d71;
   text-decoration: none;
   z-index: 101;
 }
@@ -42,12 +42,12 @@
 }
 
 .link:hover {
-  color: #667eea;
+  color: #0b1d71;
   background: rgba(102, 126, 234, 0.08);
 }
 
 .active {
-  color: #667eea;
+  color: #0b1d71;
   background: rgba(102, 126, 234, 0.12);
   font-weight: 600;
 }
@@ -58,7 +58,7 @@
   font-weight: 600;
   padding: 0.55rem 1.4rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0b1d71 0%, #764ba2 100%);
   transition: all 0.25s ease;
   box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
@@ -136,6 +136,6 @@
   }
 
   .active {
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid #0b1d71;
   }
 }

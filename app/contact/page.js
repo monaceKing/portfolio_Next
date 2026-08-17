@@ -3,42 +3,90 @@ import styles from "./page.module.css";
 
 export default function Contact() {
   return (
-    <div className="container">
-      <h1 className="title">Me Contacter</h1>
-      <p className="description">
-        Une question ? Un projet ? N&apos;hésitez pas à me contacter !
-      </p>
+    <section className={styles.contact}>
+      <div className={styles.header}>
+        <span className={styles.eyebrow}>PARLONS-EN</span>
+
+        <h1 className={styles.title}>Me contacter</h1>
+
+        <p className={styles.description}>
+          Une question, une idée ou un projet en tête ?
+          <br />
+          Échangeons et voyons comment lui donner vie.
+        </p>
+      </div>
 
       <div className={styles.contactWrapper}>
-        <div className={styles.contactInfo}>
-          <h2>Coordonnées</h2>
-          <div className={styles.infoItem}>
-            <strong>Email :</strong>
-            <a href="mailto:justeamour05@gmail.com">justeamour05@gmail.com</a>
+        <aside className={styles.contactInfo}>
+          <div>
+            <span className={styles.infoEyebrow}>MES COORDONNÉES</span>
+            <h2>Restons en contact.</h2>
+
+            <p className={styles.infoDescription}>
+              Je suis toujours ouvert à discuter d&apos;un projet, d&apos;une
+              collaboration ou simplement à échanger autour du développement
+              et de la tech.
+            </p>
           </div>
-          <div className={styles.infoItem}>
-            <strong>LinkedIn :</strong>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mon profil LinkedIn
-            </a>
+
+          <div className={styles.infoList}>
+            <div className={styles.infoItem}>
+              <span className={styles.icon}>@</span>
+
+              <div>
+                <span className={styles.label}>Email</span>
+                <a href="mailto:justeamour05@gmail.com">
+                  justeamour05@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.infoItem}>
+              <span className={styles.icon}>in</span>
+
+              <div>
+                <span className={styles.label}>LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/juste-mavoungou/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Juste Amour MAVONGOU-MBATCHI
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.infoItem}>
+              <span className={styles.icon}>GH</span>
+
+              <div>
+                <span className={styles.label}>GitHub</span>
+                <a
+                  href="https://github.com/monaceKing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  monaceKing
+                </a>
+              </div>
+            </div>
           </div>
-          <div className={styles.infoItem}>
-            <strong>GitHub :</strong>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mon profil GitHub
-            </a>
+
+          <div className={styles.decoration} />
+        </aside>
+
+        <div className={styles.formWrapper}>
+          <div className={styles.formHeader}>
+            <h2>Envoyer un message</h2>
+            <p>
+              Quelques lignes suffisent pour me donner une première idée de
+              votre projet.
+            </p>
           </div>
+
+          <ContactForm />
         </div>
-        <ContactForm />
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,11 +2,12 @@ import styles from "./page.module.css";
 
 export default function About() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.bio}>
           <h2>Qui suis-je ?</h2>
-          <p>
+          <div className={styles.paragraphe}>
+            <p>
             Ingénieur logiciel de formation et responsable de projets
             informatiques, j&apos;interviens sur le développement,
             l&apos;intégration de solutions et l&apos;analyse des données.
@@ -16,6 +17,7 @@ export default function About() {
             data, avec pour objectif de transformer les besoins en solutions
             concrètes et utiles.
           </p>
+          </div>
         </div>
 
         <div className={styles.skills}>

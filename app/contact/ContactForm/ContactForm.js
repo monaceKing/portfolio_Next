@@ -53,6 +53,7 @@ export default function ContactForm() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    placeholder='Votre Nom'
                     required
                 />
             </div>
@@ -65,6 +66,7 @@ export default function ContactForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    placeholder='Votre Email'
                     required
                 />
             </div>
@@ -77,6 +79,7 @@ export default function ContactForm() {
                     rows="5"
                     value={formData.message}
                     onChange={handleChange}
+                    placeholder='Votre Message'
                     required
                 ></textarea>
             </div>
